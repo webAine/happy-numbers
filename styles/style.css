@@ -1,0 +1,105 @@
+body {
+  background-color: #eee;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1340px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 15px;
+}
+.game {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.game__button {
+  padding: 5px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.game__items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.game__items .game__math-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.game__items .game__math,
+.game__items .game__cubs {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.game__items:first-child .game__math,
+.game__items:first-child .game__cubs {
+  opacity: 1;
+}
+.game__items:last-child {
+  margin-bottom: 0;
+}
+
+.game__math-item-result {
+  display: none;
+}
+.game__math-item-result--active {
+  display: block;
+}
+.game__math-item-input {
+  width: 30px;
+}
+.game__cubs-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.game__cubs[style*="opacity: 1"] {
+  animation: slideFromBottom 0.5s ease forwards;
+}
+.game__cub {
+  width: 30px;
+  height: 30px;
+  background-color: green;
+  border-radius: 5px;
+}
+.game__button:disabled {
+  cursor: not-allowed;
+  background-color: #a9a9a9 !important;
+}
+.game__button:not(:disabled):hover {
+  background-color: #afeeee !important;
+}
+@keyframes wrongAnswer {
+  0% {
+    color: inherit;
+  }
+  10% {
+    color: red;
+  }
+  90% {
+    color: red;
+  }
+  100% {
+    color: inherit;
+  }
+}
+
+.wrong-answer {
+  animation: wrongAnswer 1s ease;
+}
+
+@keyframes slideFromBottom {
+  0% {
+    transform: translateY(100vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
