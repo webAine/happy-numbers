@@ -8,4 +8,4 @@ Users are presented with multiplication problems (4 × N) and need to input the 
 ```bash
 1. Clone the repository:
 git clone https://github.com/webAine/happy-numbers.git
-cd your-repo
+cd happy-numbers
